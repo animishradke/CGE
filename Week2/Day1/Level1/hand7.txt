@@ -1,0 +1,27 @@
+import java.util.Scanner;
+public class hand7 {
+public static int gcd(int a, int b) {
+while (b != 0) {
+int temp = b;
+b = a % b;
+a = temp;
+}
+return a;
+}
+public static int lcm(int a, int b) {
+return (a * b) / gcd(a, b);
+}
+public static void main(String[] args) {
+Scanner scanner = new Scanner(System.in);
+System.out.print(&quot;Enter first number: &quot;);
+int num1 = scanner.nextInt();
+System.out.print(&quot;Enter second number: &quot;);
+int num2 = scanner.nextInt();
+int gcdResult = gcd(num1, num2);
+int lcmResult = lcm(num1, num2);
+System.out.println(&quot;GCD of &quot; + num1 + &quot; and &quot; + num2 + &quot; is: &quot; +
+gcdResult);
+System.out.println(&quot;LCM of &quot; + num1 + &quot; and &quot; + num2 + &quot; is: &quot; +
+lcmResult);
+}
+}
